@@ -50,10 +50,16 @@ namespace Microsoft.Extensions.DependencyInjection
         /// </summary>
         /// <param name="serviceType"></param>
         /// <returns></returns>
-        public object GetService(Type serviceType) => _engine.GetService(serviceType);
+        public object GetService(Type serviceType)
+        {
+            return _engine.GetService(serviceType);
+        }
 
         /// <inheritdoc />
-        public void Dispose() => _engine.Dispose();
+        public void Dispose()
+        {
+            _engine.Dispose();
+        }
 
         void IServiceProviderEngineCallback.OnCreate(ServiceCallSite callSite)
         {
